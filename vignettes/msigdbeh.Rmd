@@ -1,0 +1,17 @@
+---
+title: "Introduction to msigdbeh"
+package: msigdbeh
+output: 
+  BiocStyle::html_document
+vignette: >
+  %\VignetteIndexEntry{Introduction to msigdbeh}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+Here is the output of `sessionInfo()` on the system on which this document was compiled.
+
+```{r sessioninfo}
+sessionInfo()
+```
+

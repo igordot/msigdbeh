@@ -23,8 +23,10 @@ Suggests:
     rmarkdown,
     roxygen2
 biocViews:
+    CancerData,
     ExperimentData,
-    ExperimentHub
+    ExperimentHub,
+    ImmunoOncologyData
 VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

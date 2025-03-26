@@ -28,24 +28,24 @@ md_df <-
     blank_df,
     data.frame(
       "Title" = "MSigDB v2024.1.Hs",
-      "Description" = "Molecular Signatures Database Human Collections for release 2024.1",
+      "Description" = "Molecular Signatures Database (MSigDB) Human Collections for release 2024.1",
       "SourceVersion" = "2024.1.Hs",
       "Species" = "Homo sapiens",
       "TaxonomyId" = "9606",
-      "RDataPath" = "ndownloader/files/53008628"
+      "RDataPath" = "ndownloader/files/53251289"
     ),
     data.frame(
       "Title" = "MSigDB v2024.1.Mm",
-      "Description" = "Molecular Signatures Database Mouse Collections for release 2024.1",
+      "Description" = "Molecular Signatures Database (MSigDB) Mouse Collections for release 2024.1",
       "SourceVersion" = "2024.1.Mm",
       "Species" = "Mus musculus",
       "TaxonomyId" = "10090",
-      "RDataPath" = "ndownloader/files/53008637"
+      "RDataPath" = "ndownloader/files/53251292"
     )
   )
 
 # Set constant values
-md_df$BiocVersion <- "3.20"
+md_df$BiocVersion <- "3.21"
 md_df$SourceType <- "Zip"
 md_df$SourceUrl <- "https://data.broadinstitute.org/gsea-msigdb/msigdb/"
 md_df$Maintainer <- "Bioconductor Package Maintainer <maintainer@bioconductor.org>"

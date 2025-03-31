@@ -24,11 +24,14 @@ Suggests:
     knitr,
     rmarkdown,
     roxygen2
+    roxygen2,
+    testthat (>= 3.0.0)
 biocViews:
     CancerData,
     ExperimentData,
     ExperimentHub,
     ImmunoOncologyData
+Config/testthat/edition: 3
 VignetteBuilder: knitr
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

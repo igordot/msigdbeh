@@ -2,7 +2,6 @@
 % Please edit documentation in R/msigdbeh-package.R
 \docType{package}
 \name{msigdbeh-package}
-\alias{msigdbeh}
 \alias{msigdbeh-package}
 \title{msigdbeh: MSigDB Data Frame via ExperimentHub}
 \description{

@@ -16,6 +16,7 @@ BugReports: https://github.com/igordot/msigdbeh/issues
 Depends:
     R (>= 4.1)
 Imports:
+    AnnotationHub,
     ExperimentHub,
     utils
 Suggests:

@@ -1,17 +1,113 @@
 ---
 title: "Introduction to msigdbeh"
 package: msigdbeh
+date: "`r doc_date()`"
 output: 
-  BiocStyle::html_document
+  BiocStyle::html_document:
+    self_contained: yes
+    toc: true
+    toc_float: true
+    code_folding: show
 vignette: >
   %\VignetteIndexEntry{Introduction to msigdbeh}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}  
 ---
 
-Here is the output of `sessionInfo()` on the system on which this document was compiled.
+# Overview
 
-```{r sessioninfo}
-sessionInfo()
+The `r Biocpkg("msigdbeh")` R package provides Molecular Signatures Database (MSigDB) gene sets in an R-friendly "tidy" format.
+Each row contains one gene (as gene symbols as well as NCBI Entrez and Ensembl IDs) and the corresponding gene set.
+
+The package is designed to serve as the data source for `r CRANpkg("msigdbr")`.
+
+# Installation
+
+The package can be installed from Bioconductor.
+
+```{r install-msigdbeh, eval=FALSE}
+if (!require("BiocManager", quietly = TRUE)) {
+    install.packages("BiocManager")
+}
+
+BiocManager::install("msigdbeh")
 ```
 
+# Usage
+
+Load `r Biocpkg("msigdbeh")`.
+
+```{r load-msigdbeh, message=FALSE}
+library(msigdbeh)
+```
+
+Retrieve the latest version of the MSigDB gene sets.
+MSigDB is split into human and mouse resources, each one provided in the approved gene symbols of its respective species.
+
+```{r msigdbeh, message=FALSE}
+mdf <- msigdbeh(species = "HS")
+```
+
+```{r}
+mdf[1:10, 1:8]
+```
+
+# Dataset summary
+
+Check the included collections.
+
+```{r collections}
+mdf[, c("gs_collection", "gs_subcollection", "gs_collection_name")] |>
+    sort_by(~ list(gs_collection, gs_subcollection, gs_collection_name)) |>
+    unique()
+```
+
+Check the database version.
+
+```{r db-version}
+unique(mdf$db_version)
+```
+
+# ExperimentHub access
+
+The `r Biocpkg("msigdbeh")` package exists primarily for providing documentation.
+The relevant data files are stored at the ExperimentHub web service and can be retrieved directly from there.
+
+Load `r Biocpkg("ExperimentHub")` to access resources stored at the ExperimentHub web service.
+
+```{r load-eh, message=FALSE}
+library(ExperimentHub)
+```
+
+Create an ExperimentHub object.
+
+```{r eh}
+eh <- ExperimentHub()
+```
+
+Get the data files associated with the `r Biocpkg("msigdbeh")` package using the query method.
+
+```{r query, message=FALSE}
+msigdbehData <- query(eh, "msigdbeh")
+```
+
+```{r}
+msigdbehData
+```
+
+A specific object can be downloaded by specifying its identifier.
+
+```{r, message=FALSE}
+mdf <- msigdbehData[["EH9632"]]
+```
+
+Each file is retrieved from the ExperimentHub server and cached locally.
+It should download much more quickly after the initial retrieval.
+
+# Session info
+
+Report information about R, the OS, and attached/loaded packages.
+
+```{r session-info}
+sessionInfo()
+```

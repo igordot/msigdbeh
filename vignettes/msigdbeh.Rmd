@@ -16,8 +16,8 @@ vignette: >
 
 # Overview
 
-The `r Biocpkg("msigdbeh")` R package provides Molecular Signatures Database (MSigDB) gene sets in an R-friendly "tidy" format.
-Each row contains one gene (as gene symbols as well as NCBI Entrez and Ensembl IDs) and the corresponding gene set.
+The `r Biocpkg("msigdbeh")` R package provides Molecular Signatures Database (MSigDB) gene sets as a "tidy" data frame.
+Each row contains one gene (symbol, NCBI/Entrez ID, Ensembl ID) and the corresponding gene set.
 
 The package is designed to serve as the data source for `r CRANpkg("msigdbr")`.
 
@@ -26,10 +26,6 @@ The package is designed to serve as the data source for `r CRANpkg("msigdbr")`.
 The package can be installed from Bioconductor.
 
 ```{r install-msigdbeh, eval=FALSE}
-if (!require("BiocManager", quietly = TRUE)) {
-    install.packages("BiocManager")
-}
-
 BiocManager::install("msigdbeh")
 ```
 

@@ -69,3 +69,8 @@ $RECYCLE.BIN/
 *.msp
 # Windows shortcuts
 *.lnk
+
+### Bioconductor ###
+*.Rproj
+dev/
+inst/.DS_Store

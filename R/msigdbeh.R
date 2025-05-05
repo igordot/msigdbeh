@@ -33,15 +33,15 @@ msigdbeh <- function(species = c("HS", "MM")) {
     stopifnot(length(hubq) > 1)
 
     # Confirm that the data files are data frames
-    hubq <- AnnotationHub::subset(hubq, rdataclass == "data.frame")
+    hubq <- AnnotationHub::subset(hubq, hubq$rdataclass == "data.frame")
     stopifnot(length(hubq) > 1)
 
     # Select objects based on target species
     if (species == "HS") {
-        hubq <- AnnotationHub::subset(hubq, species == "Homo sapiens")
+        hubq <- AnnotationHub::subset(hubq, hubq$species == "Homo sapiens")
     }
     if (species == "MM") {
-        hubq <- AnnotationHub::subset(hubq, species == "Mus musculus")
+        hubq <- AnnotationHub::subset(hubq, hubq$species == "Mus musculus")
     }
 
     # Get the metadata columns as data frame

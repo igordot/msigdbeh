@@ -26,3 +26,11 @@ There are several resources that provide similar functionality:
 
 Only MSigDF has been updated since 2023 (as of April 2025) and provides the latest version of MSigDB.
 None of these alternatives include Ensembl IDs.
+
+## Installation
+
+The package can be installed from Bioconductor (after it is approved).
+
+```r
+BiocManager::install("msigdbeh")
+```

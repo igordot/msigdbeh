@@ -16,7 +16,7 @@ vignette: >
 
 # Overview
 
-The `r Biocpkg("msigdbeh")` R package provides Molecular Signatures Database (MSigDB) gene sets as a "tidy" data frame.
+The `r Biocpkg("msigdbeh")` R package provides [Molecular Signatures Database (MSigDB)](https://www.gsea-msigdb.org/gsea/msigdb) gene sets as a "tidy" data frame.
 Each row contains one gene (symbol, NCBI/Entrez ID, Ensembl ID) and the corresponding gene set.
 
 The package is designed to serve as the data source for `r CRANpkg("msigdbr")`.
@@ -47,6 +47,11 @@ mdf <- msigdbeh(species = "HS")
 ```{r}
 mdf[1:10, 1:8]
 ```
+
+The `db_gene_symbol`, `db_ncbi_gene`, `db_ensembl_gene` columns are the gene identifiers in the database.
+The `source_gene` column are the gene identifiers in the original publication.
+The `gs_*` columns provide details about the gene sets.
+The `db_*` columns provide details about the MSigDB database, so should be identical for the entire data frame.
 
 # Dataset summary
 

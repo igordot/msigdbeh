@@ -1,3 +1,6 @@
+# Install the msigdbdf package (not available on CRAN or Bioconductor) using:
+# install.packages("msigdbdf", repos = c("https://igordot.r-universe.dev"))
+
 # Load packages
 library(msigdbdf)
 library(glue)
